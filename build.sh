@@ -9,6 +9,10 @@ set -e
 # Add your account to the docker group (usermod -aG docker <username>) and re-login
 # git submodule init
 # git submodule update
+# cp config.ex config
+# edit config to suit your needs (wifi ssid/password)
+# ./build.sh
+# Image will be in pi-gen/deploy/
 
 sudo modprobe binfmt_misc
 cp -rv stage-infobord pi-gen/

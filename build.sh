@@ -21,4 +21,4 @@ touch pi-gen/stage2/SKIP_IMAGES
 
 cd pi-gen
 cat ../fix.patch | patch -p0 -N || true
-#./build-docker.sh
+./build-docker.sh

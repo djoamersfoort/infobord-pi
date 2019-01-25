@@ -23,5 +23,7 @@ fi
 
 # Start X11 inforbord session
 if [[ "$START_X11" == "1" ]]; then
+  # Insert sleep, to prevent switchback to TTY1
+  sleep 10
   /usr/bin/startx
 fi

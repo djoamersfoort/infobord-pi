@@ -1,2 +1,2 @@
-xserver-xorg-video-fbdev xserver-xorg xinit xserver-xorg-video-fbturbo
+xserver-xorg-video-fbdev xserver-xorg xinit xserver-xorg-video-fbturbo xdotool
 openbox

@@ -22,11 +22,12 @@ class InfobordController:
     def force_screen_on(self):
         call(['/usr/bin/xset', 's', 'off'])
         call(['/usr/bin/xset', 's', 'noblank'])
+        call(['/usr/bin/xset', 's', '0 0'])
         call(['/usr/bin/xset', 'dpms', 'force', 'on'])
+        call(['/usr/bin/xset', 'dpms 0 0 0'])
         call(['/usr/bin/xset', '-dpms'])
 
     def force_screen_off(self):
-        call(['/usr/bin/xset', '+dpms'])
         call(['/usr/bin/xset', 'dpms', 'force', 'off'])
 
     def on_space_connected(self, client, userdata, flags, rc):

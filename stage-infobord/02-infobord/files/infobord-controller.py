@@ -16,7 +16,7 @@ class InfobordController:
 
         self.mq.on_connect = self.on_space_connected
         self.mq.on_message = self.on_space_message
-        self.mq.connect('bitlair.nl', 1883, 60)
+        self.mq.connect('mqtt.bitlair.nl', 1883, 60)
         self.mq.loop_start()
 
     def force_screen_on(self):

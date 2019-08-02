@@ -2,6 +2,7 @@
 #
 
 import paho.mqtt.client as mqtt
+import shutil
 from subprocess import Popen, call
 from time import sleep
 
@@ -62,6 +63,7 @@ class InfobordController:
 
     def start_browser(self, url):
         self.stop_browser()
+        shutil.rmtree('/home/pi/.config/chromium')
         self.force_screen_on()
         self.browser = Popen(['/usr/bin/chromium-browser', '--start-fullscreen', '--app', url])
 

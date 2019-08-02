@@ -63,7 +63,7 @@ class InfobordController:
 
     def start_browser(self, url):
         self.stop_browser()
-        shutil.rmtree('/home/pi/.config/chromium')
+        shutil.rmtree('/home/pi/.config/chromium', True)
         self.force_screen_on()
         self.browser = Popen(['/usr/bin/chromium-browser', '--start-fullscreen', '--app', url])
 

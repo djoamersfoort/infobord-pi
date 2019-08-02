@@ -1,3 +1,11 @@
+--- Dockerfile
++++ Dockerfile
+@@ -1,4 +1,4 @@
+-FROM debian:buster
++FROM i386/debian:buster
+ 
+ ENV DEBIAN_FRONTEND noninteractive
+ 
 --- scripts/common.org	2019-03-29 18:56:39.152473236 +0100
 +++ scripts/common	2019-03-29 18:57:26.020602489 +0100
 @@ -94,9 +94,7 @@

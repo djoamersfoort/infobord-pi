@@ -75,7 +75,7 @@ class InfobordController:
                     self.start_browser("https://infobord.djoamersfoort.nl")
             elif self.bitlair_open:
                 if self.browser is None:
-                    self.start_browser("https://infobord.djoamersfoort.nl/bitlair")
+                    self.start_browser("https://bitlair.nl/Hoofdpagina")
             else:
                 # Nothing open -> DPMS standby
                 print("Nothing to show, turning off screen...")

@@ -60,12 +60,12 @@ class InfobordController:
             self.browser.terminate()
             self.browser.wait()
             self.browser = None
+            Popen(['/bin/sync'])
 
     def start_browser(self, url):
         self.stop_browser()
-        shutil.rmtree('/home/pi/.config/chromium', True)
         self.force_screen_on()
-        self.browser = Popen(['/usr/bin/chromium-browser', '--start-fullscreen', '--disable-features=TranslateUI', '--app', url])
+        self.browser = Popen(['/usr/bin/chromium-browser', '--temp-profile', '--start-fullscreen', '--disable-features=TranslateUI', '--app', url])
 
     def loop(self):
         while True:
@@ -75,7 +75,8 @@ class InfobordController:
                     self.start_browser("https://infobord.djoamersfoort.nl")
             elif self.bitlair_open:
                 if self.browser is None:
-                    self.start_browser("https://dashboard.bitlair.nl/d/000000001/bitlair?refresh=1m&orgId=1")
+                    #self.start_browser("https://dashboard.bitlair.nl/d/000000001/bitlair?refresh=1m&orgId=1")
+                    self.start_browser("https://infobordbitlair.djoamersfoort.nl/")
             else:
                 # Nothing open -> DPMS standby
                 print("Nothing to show, turning off screen...")
@@ -96,3 +97,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
